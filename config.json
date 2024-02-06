@@ -1,0 +1,32 @@
+{
+    "bankName": "Bank of America",
+    "debug": true,
+    "limits": {
+        "minAmount": 25,
+        "maxAmount": 1000
+    },
+    "locale": {
+        "currency": "USD",
+        "language": "en"
+    },
+    "translations": {
+        "send": "Send",
+        "history": "History",
+        "recipient": "Recipient",
+        "amount": "Amount",
+        "home": "Home",
+        "recieved": "Recieved",
+        "sent": "Sent",
+        "date": "Date",
+        "from": "From",
+        "to": "To",
+        "error_recipientIsRequired": "Recipient is required",
+        "error_amountIsRequired": "Amount is required",
+        "error_amountMustBeANumber": "Amount must be a number",
+        "error_amountMustBeGreaterThanMinAmount": "Amount must be greater than {{minAmount}}",
+        "error_amountMustBeLessThanMaxAmount": "Amount must be less than {{maxAmount}}",
+        "error_cantSendToYourself": "You can't send money to yourself",
+        "error_notEnoughFunds": "You don't have enough funds",
+        "error_receipientDoesNotExist": "Recipient does not exist"
+    }
+}

@@ -39,6 +39,7 @@ const Root = () => {
         <div className="relative m-12">
           <img src={image} className="top-0 left-0 absolute" />
           <div className="z-10 top-[101px] left-[51px] absolute w-[398px] h-[797px] rounded-3xl flex flex-col overflow-hidden">
+            <div className="h-6 bg-black w-full"></div>
             <App settings={settings} i18n={i18next} theme={{}} />
           </div>
         </div>

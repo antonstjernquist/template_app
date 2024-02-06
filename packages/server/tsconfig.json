@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "moduleResolution": "Node16",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "types": ["@citizenfx/server"]
-  }
+  },
+  "include": ["**/*.ts", "../shared/**/*.ts"]
 }

@@ -1,5 +1,5 @@
 {
-  "name": "template_app",
+  "name": "send_app",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
@@ -24,7 +24,12 @@
   },
   "scripts": {
     "dev": "vite --mode dev",
+    "preview": "vite preview --port 4173 --strictPort",
     "dev:browser": "concurrently \"build:watch --mode dev\" \"preview:dev\"",
+    "dev:server": "tsx watch packages/server/server.ts",
+    "game": "yarn build && yarn bundle && yarn move",
+    "bundle": "sh scripts/bundle.sh",
+    "move": "sh scripts/move.sh",
     "build:dev": "vite build --mode dev",
     "build:watch": "vite build --watch",
     "build:game": "vite build --mode game",
@@ -34,19 +39,25 @@
     "watch": "concurrently \"yarn watch:client\" \"yarn watch:server\"  \"yarn watch:nui\"",
     "watch:nui": "esbuild src/index.tsx --outdir=dist/html --watch --target=es6 --bundle --loader:.png=dataurl",
     "watch:client": "esbuild packages/client/client.ts --bundle --watch --outfile=dist/client.js",
-    "watch:server": "esbuild packages/server/server.ts --bundle --sourcemap --platform=node --watch --outfile=dist/server.js",
+    "watch:server": "esbuild packages/server/server.ts --bundle --platform=node --watch --outfile=dist/server.js",
     "build:client": "esbuild packages/client/client.ts --bundle --outfile=dist/client.js",
-    "build:server": "esbuild packages/server/server.ts --bundle --sourcemap --platform=node --outfile=dist/server.js"
+    "build:server": "esbuild packages/server/server.ts --bundle --outfile=dist/server.js --platform=node"
   },
   "dependencies": {
+    "@garmingo/framework-js-server": "^1.1.2",
     "esbuild": "^0.19.5",
     "eslint": "^8.10.0",
+    "fivem-router": "^1.0.12",
     "i18next": "^23.6.0",
     "prettier": "^3.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-feather": "^2.0.10",
     "react-hot-loader": "^4.13.0",
+    "react-query": "^3.39.3",
     "react-router-dom": "^5.3.0",
-    "vite-plugin-top-level-await": "^1.3.1"
+    "tsx": "^4.7.0",
+    "vite-plugin-top-level-await": "^1.3.1",
+    "zod": "^3.22.4"
   }
 }

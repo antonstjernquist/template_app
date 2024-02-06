@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "types": ["@citizenfx/client", "@types/node"],
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
     "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "module": "commonjs",

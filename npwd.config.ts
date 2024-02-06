@@ -5,13 +5,13 @@ interface Settings {
   language: 'en';
 }
 
-export const path = '/mockapp';
+export const path = '/send_app';
 export default (settings: Settings) => ({
-  id: 'MOCKAPP',
+  id: 'SEND_APP',
   path,
-  nameLocale: 'Mockapp',
-  color: '#fff',
-  backgroundColor: '#333',
+  nameLocale: 'Send App',
+  color: '#f4f4f4',
+  backgroundColor: '#222',
   icon: AppIcon,
   app: App,
 });

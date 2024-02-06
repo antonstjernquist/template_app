@@ -1,16 +1,18 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useConfig } from '../hooks/useConfig';
+import { ResourceConfig } from '../App';
 
-export const HEADER_HEIGHT = '4rem';
-interface HeaderProps {
-  children: ReactNode;
-}
+export const Header = () => {
+  const { translations } = useConfig<ResourceConfig>() ?? {};
 
-const Header = ({ children }: HeaderProps) => {
   return (
-    <div>
-      <div>{children}</div>
-    </div>
+    <header className="h-8">
+      <Link to="/" tabIndex={-1}>
+        <button className="hover:translate-x-2 transition-all text-cyan-300">
+          {translations?.home}
+        </button>
+      </Link>
+    </header>
   );
 };
-
-export default Header;

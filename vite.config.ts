@@ -40,7 +40,7 @@ export default defineConfig({
     port: 4173,
   },
   build: {
-    outDir: 'dist/web',
+    outDir: 'web/dist',
     emptyOutDir: true,
     modulePreload: false,
     assetsDir: '',

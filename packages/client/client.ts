@@ -1,11 +1,17 @@
-let isFocused = false;
-const exps = global.exports;
+import { Client, post } from 'fivem-router/client';
+
+const client = new Client();
+
+client.add('/api/hello', async () => {
+  return { hello: 'world' };
+});
 
 RegisterCommand(
-  'mocknui',
-  () => {
-    console.log('Sending mock nui message');
-    global.exports['npwd'].sendNPWDMessage('MOCKAPP', 'setRandomData', { test: 'test' });
+  'app-debug',
+  async () => {
+    console.log('running app-debug');
+    const res = await post('/debug');
+    console.log(res);
   },
   false,
 );

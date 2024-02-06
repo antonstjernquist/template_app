@@ -3,11 +3,11 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "module": "esnext",
+    "module": "NodeNext",
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },

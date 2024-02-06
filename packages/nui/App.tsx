@@ -1,6 +1,11 @@
-import React from 'react';
-import './index.css';
 import { i18n } from 'i18next';
+import React from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import './index.css';
+import { History } from './views/History';
+import { Home } from './views/Home';
+import { Send } from './views/Send';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 interface AppProps {
   theme: unknown;
@@ -8,14 +13,21 @@ interface AppProps {
   settings: any;
 }
 
-export function App(props: AppProps) {
+const queryClient = new QueryClient();
+
+export function App({ settings, theme, i18n }: AppProps) {
   return (
-    <div className="flex-1 text-white p-4 bg-gray-800">
-      <div className="flex flex-col">
-        <span className="text-2xl">Template app</span>
-        <span className="text-sm">Do whatever</span>
+    <QueryClientProvider client={queryClient}>
+      <div className="h-full bg-slate-800 text-gray-200 p-6 flex flex-col">
+        <HashRouter basename="/send_app">
+          <Switch>
+            <Route path="/history" component={History} />
+            <Route path="/send" component={Send} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </HashRouter>
       </div>
-    </div>
+    </QueryClientProvider>
   );
 }
 
