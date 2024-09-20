@@ -7,9 +7,11 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
+    "resolvePackageJsonExports": true,
+    "resolvePackageJsonImports": true,
     "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
-  "exclude": ["server", "client"]
+  "exclude": ["server", "client", "web", "node_modules"]
 }

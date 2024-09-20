@@ -1,16 +1,17 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 import { HistoryItem } from '../../shared/Types';
 import { ResourceConfig } from '../../shared/config';
 import { Header } from '../components/Header';
 import { useConfig } from '../hooks/useConfig';
 import fetchNui from '../utils/fetchNui';
 import { FormattedPrice } from '../utils/money';
+import { useQuery } from '@tanstack/react-query';
 
 export const History = () => {
   const { translations } = useConfig<ResourceConfig>() ?? {};
-  const { data: history } = useQuery('history', () => {
-    return fetchNui<{ data: HistoryItem[] }>('/history');
+  const { data: history } = useQuery({
+    queryKey: ['history'],
+    queryFn: () => fetchNui<{ data: HistoryItem[] }>('/history'),
   });
 
   return (
@@ -33,7 +34,9 @@ export const History = () => {
                   </div>
                   <div className="flex flex-col text-right">
                     <span
-                      className={`text-sm ${transaction.isIncoming ? 'text-cyan-300' : 'text-rose-500'}`}
+                      className={`text-sm ${
+                        transaction.isIncoming ? 'text-cyan-300' : 'text-rose-500'
+                      }`}
                     >
                       {transaction.isIncoming ? translations?.recieved : translations?.sent}
                     </span>

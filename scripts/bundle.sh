@@ -4,7 +4,7 @@
 name=$(node -p "require('./package.json').name")
 
 # Save as variable
-destination="./$name"
+destination="./dist"
 
 echo "Bundling $name"
 
@@ -13,11 +13,10 @@ rm -rf $destination
 
 # Copy dist
 mkdir $destination
-cp -r dist $destination/dist
-cp -r web $destination/web
+cp -r src/client/dist $destination/client
+cp -r src/server/dist $destination/server
+cp -r src/ui/dist $destination/ui
 
 # Copy config files
 cp config.json $destination
-cp framework.json $destination
-cp npwd.config.ts $destination
 cp fxmanifest.lua $destination

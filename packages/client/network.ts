@@ -1,23 +1,3 @@
-export const SERVER_EVENT_LISTENER_NAME = 'ride-app-event';
-export const CLIENT_EVENT_LISTENER_NAME = 'ride-app-response-event';
-export const NUI_CALLBACK_REGISTER_NAME = 'nui-callback-event';
-export const CLIENT_CALLBACK_PREFIX = '__client__';
-export const SERVER_BROADCAST_EVENT_NAME = 'ride-app-broadcast-event';
-
-export const EVENTS = {
-  RIDE_REQUEST_RECEIVED: 'ride_request_received',
-  DRIVER_AVAILABLE_UPDATED: 'driver_available_updated',
-  ACTIVE_RIDE_UPDATED: 'active_ride_updated',
-  DRIVER_MESSAGE: 'driver_message',
-  PASSENGER_MESSAGE: 'passenger_message',
-  NEW_TIP: 'new_tip',
-  RIDE_CANCELLED: 'ride_cancelled',
-  NEW_DRIVER_DESTINATION: 'new_driver_destination',
-  PLAYER_LOADED: 'ride_app:player_loaded',
-  PLAYER_UNLOADED: 'ride_app:player_unloaded',
-  PHONE_NOTIFICATION: 'ride_app:phone_notification',
-};
-
 export interface RequestPayload {
   requestId: string;
   path: string;

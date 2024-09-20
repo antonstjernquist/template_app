@@ -43,6 +43,7 @@ export default defineConfig({
     outDir: 'web/dist',
     emptyOutDir: true,
     modulePreload: false,
+    minify: false, // DEBUG: Set to true for production
     assetsDir: '',
   },
 });

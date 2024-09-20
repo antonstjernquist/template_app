@@ -6,8 +6,13 @@ import { getServerConfig, isRunningInGame } from './utils/config';
 import { getErrorMessage } from './utils/errors';
 import { Framework } from '@garmingo/framework-js-server';
 import { HistoryItem, NPWDUser } from '../shared/Types';
+import { listeners } from '../shared/constants';
 
-const app = new App(false);
+const app = new App({
+  debug: true,
+  listeners,
+});
+
 const baseRouter = new Router({});
 
 if (!isRunningInGame()) {

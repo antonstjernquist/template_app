@@ -1,4 +1,4 @@
-import { CustomMiddleware, RouterContext } from 'fivem-router/dist/server';
+import { CustomMiddleware, RouterContext } from 'fivem-router/server';
 import { users } from '../data';
 import { isRunningInGame } from '../utils/config';
 

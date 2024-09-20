@@ -6,6 +6,7 @@ import fetchNui, { fetchNuiPhone } from '../utils/fetchNui';
 import { LinkExternal } from '../components/ExternalLink';
 import { User } from 'react-feather';
 import { useQueryParams } from '../hooks/useQueryParams';
+import { useSearchParams } from 'react-router-dom';
 
 export const toggleKeys = async (keepGameFocus: boolean) => {
   return await fetchNuiPhone('npwd:toggleAllControls', {
@@ -14,23 +15,23 @@ export const toggleKeys = async (keepGameFocus: boolean) => {
 };
 
 interface Contact {
-  number: string;
   id: string;
-  display: string;
+  phone_number: string;
+  name: string;
 }
 
 export const Send = () => {
-  const { contact } = useQueryParams<{ contact: string }>();
+  const { data } = useQueryParams<{ data: string }>();
   const parsedContact: Contact | null = useMemo(() => {
     try {
-      return JSON.parse(decodeURIComponent(contact));
+      return JSON.parse(decodeURIComponent(data));
     } catch (e) {
       return null;
     }
-  }, [contact]);
+  }, [data]);
 
   const [amount, setAmount] = React.useState('');
-  const [recipient, setRecipient] = React.useState(parsedContact?.number ?? '');
+  const [recipient, setRecipient] = React.useState(parsedContact?.phone_number ?? '');
   const [error, setError] = React.useState('');
   const { translations } = useConfig<ResourceConfig>() ?? {};
 
@@ -98,7 +99,7 @@ export const Send = () => {
             />
 
             <LinkExternal
-              to={`/contacts?referal=/send_app/send`}
+              to={`/apps/calls/contacts?referal=/apps/send_app/send`}
               tabIndex={-1}
               className="self-center flex"
             >

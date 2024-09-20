@@ -1,6 +1,6 @@
 {
-    "bankName": "Bank of America",
-    "debug": true,
+    "bankName": "Name of Bank",
+    "debug": false,
     "limits": {
         "minAmount": 25,
         "maxAmount": 1000

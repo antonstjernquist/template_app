@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <header className="h-8">
-      <Link to="/" tabIndex={-1}>
+      <Link to=".." tabIndex={-1}>
         <button className="hover:translate-x-2 transition-all text-cyan-300">
           {translations?.home}
         </button>
